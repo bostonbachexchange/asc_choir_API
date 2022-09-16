@@ -2,7 +2,7 @@
 
 // creating a base name for the mongodb
 // REPLACE THE STRING WITH YOUR OWN DATABASE NAME
-const mongooseBaseName = 'harmony-haven'
+const mongooseBaseName = ''
 
 // create the mongodb uri for development and test
 const database = {
@@ -15,6 +15,8 @@ const database = {
 const localDb = process.env.TESTENV ? database.test : database.development
 
 // mongodb+srv://jclapper:ifthewheelsfalloffweridethehubcaps@projectcrud.hvhcg.mongodb.net/harmony-haven?retryWrites=true&w=majority
+
+// mongodb+srv://jclapper:<password>@projectcrud.hvhcg.mongodb.net/asc_choir?retryWrites=true&w=majority
 
 // Environment variable MONGODB_URI will be available in
 // heroku production evironment otherwise use test or development db
