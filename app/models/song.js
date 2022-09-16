@@ -22,6 +22,9 @@ const songSchema = new Schema(
 		lyrics: {
 			type: String,
 		},
+		source: {
+			type: String,
+		},
 		scorePDF: {
 			type: String,
 		},
