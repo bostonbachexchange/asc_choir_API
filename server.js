@@ -9,7 +9,6 @@ const cors = require('cors')
 const { uploadFile } = require('./s3')
 
 // require route files
-const exampleRoutes = require('./app/routes/example_routes')
 const userRoutes = require('./app/routes/user_routes')
 const messageRoutes = require('./app/routes/message_board_routes')
 const songRoutes = require('./app/routes/song_routes')
@@ -74,7 +73,6 @@ app.use(express.urlencoded({ extended: true }))
 app.use(requestLogger)
 
 // register route files
-app.use(exampleRoutes)
 app.use(userRoutes)
 app.use(messageRoutes)
 app.use(commentRoutes)

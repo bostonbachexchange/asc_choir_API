@@ -31,9 +31,9 @@ const songSchema = new Schema(
 		recordings: {
 			type: String,
 		},
-		embedId: {
-			type: String,
-		},
+		embedId: [
+			{ type: String }
+		],
 		url: {
 			type: String,
 		},
