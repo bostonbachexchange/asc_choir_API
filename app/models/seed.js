@@ -49,7 +49,7 @@ const startSongs = [
     lyrics: 'Gathered here in the mystery of the hour. |Gathered here in one strong body. |Gathered here in the struggle and the power. |Spirit, draw near.',
     scorePDF: 'STLT389', recordings: '', embedId: ['qLtxMda7_Ko'], owner: '63019b25ae6e795c6c8e9eb7'},
     { title: 'Return Again', composer: 'Shlomo Carlebach', lyricist: 'Shlomo Carlebach', type: 'Hymn', hymnNumber: 1011, source: "Singing the Living Tradition",
-    lyrics: 'Return again, Return again, |Return to the home of your soul, |Return to who you are, Return to what you are, |Return to where you are born.',
+    lyrics: 'Return again, Return again, |Return to the home of your soul, |Return to who you are, Return to what you are, |Return to where you are |born and rebord again.',
     scorePDF: 'STJ1011', recordings: '', embedId: ['4KQzSwcvaWs', 'KkxWD2p9cxs', 'OEsMlW3mB4I'], owner: '63019b25ae6e795c6c8e9eb7'},
     { title: 'We Begin Again in Love', composer: 'Les Kleen', lyricist: 'Robert Eller-Isaacs', type: '', hymnNumber: 1037, source: "Singing the Living Tradition",
     lyrics: 'We forgive ourselves and each other. We begin again in love.',
