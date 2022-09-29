@@ -34,6 +34,9 @@ const songSchema = new Schema(
 		embedId: [
 			{ type: String }
 		],
+		webScore: [
+			{ type: String }
+		],
 		url: {
 			type: String,
 		},
