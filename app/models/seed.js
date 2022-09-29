@@ -66,6 +66,8 @@ const startSongs = [
     { title: 'Chalice Song', composer: 'Mae Higgins arr. Tom Benjamin', lyricist: 'Mae Higgins', type: 'choral response', hymnNumber: 11, source: "Choral Responses",
     lyrics: 'Chalice, chalice burning bright, |Help remind us with your light, |of how we\'d like to live each day, |with love and truth helping lead the way.',
     scorePDF: 'CR11', recordings: '', owner: '63019b25ae6e795c6c8e9eb7'},
+    { title: 'Make Me a Channel of Your Peace', composer: 'Sebastian Temple', lyricist: 'Sebastian Temple', type: 'Choral', hymnNumber: 0, source: "Singing the Living Tradition",
+    lyrics: 'Make me a channel of your peace. |Where there is hatred let me bring your love. |Where there is injury, your pardon, Lord |And where there\'s doubt, true faith in you. |` |Oh, Master grant that I may never seek |So much to be consoled as to console |To be understood as to understand |To be loved as to love with all my soul. |` |Make me a channel of your peace |Where there\'s despair in life, let me bring hope |Where there is darkness, only light |And where there\'s sadness, ever joy. |` |Oh, Master grant that I may never seek |So much to be consoled as to console |To be understood as to understand |To be loved as to love with all my soul. |` |Make me a channel of your peace |It is in pardoning that we are pardoned |In giving to all men that we receive |And in dying that we\'re born to eternal life. ', scorePDF: '', recordings: '', embedId: ['7mxO_dsvHew','rD33W6vVpNI',], owner: '63019b25ae6e795c6c8e9eb7'},
     // { title: '', composer: '', lyricist: '', type: '', hymnNumber: 0, source: "Singing the Living Tradition",
     // lyrics: '',
     // scorePDF: '', recordings: '', embedId: '', owner: '63019b25ae6e795c6c8e9eb7'},
