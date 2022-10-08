@@ -76,7 +76,7 @@ const startSongs = [
     scorePDF: 'STLT121', recordings: '', embedId: ['WigNq8QDaMA','5ohFxzVjx1M','mcVry_exa2k'], owner: '632a0d10220197d54dc98cf1'},
     { title: 'Ancient Mother', composer: 'Traditional Navajo prayer', lyricist: 'Traditional Navajo prayer', type: 'hymn', hymnNumber: 1069, source: "Singing the Journey",
     lyrics: 'Ancient Mother, I hear you calling. |Ancient Mother, I hear your song. |Ancient Mother, I feel your laughter. |Ancient Mother, I taste your tears.',
-    scorePDF: 'STJ1069', recordings: '', embedId: ['hgvuyJ3V8Ok'], owner: '632a0d10220197d54dc98cf1'},
+    scorePDF: 'STJ1069', recordings: '', embedId: ['hgvuyJ3V8Ok','kqeuT1iLHyg'], owner: '632a0d10220197d54dc98cf1'},
     // { title: '', composer: '', lyricist: '', type: '', hymnNumber: 0, source: "Singing the Living Tradition",
     // lyrics: '',
     // scorePDF: '', recordings: '', embedId: '', owner: '632a0d10220197d54dc98cf1'},
