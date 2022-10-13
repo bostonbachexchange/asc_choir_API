@@ -16,7 +16,7 @@ const router = express.Router()
 // INDEX
 // GET ALL MESSAGES FROM MESSAGEBOARD
 router.get('/messageboard', (req, res, next) => {
-	MessageBoard.find()
+	MessageBoard.find().sort({date: -1})
 		.populate('owner')
 		.then((messageboard) => {
 			return messageboard.map((message) => message.toObject())

@@ -28,9 +28,9 @@ const songSchema = new Schema(
 		scorePDF: {
 			type: String,
 		},
-		recordings: {
-			type: String,
-		},
+		recordings: 
+			[{type: String}]
+		,
 		embedId: [
 			{ type: String }
 		],
