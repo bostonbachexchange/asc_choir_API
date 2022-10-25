@@ -10,6 +10,7 @@ const { uploadFile } = require('./s3')
 
 // require route files
 const userRoutes = require('./app/routes/user_routes')
+const adminRoutes = require('./app/routes/admin_routes')
 const messageRoutes = require('./app/routes/message_board_routes')
 const songRoutes = require('./app/routes/song_routes')
 const uploadRoutes = require('./app/routes/upload_routes')
@@ -74,6 +75,7 @@ app.use(requestLogger)
 
 // register route files
 app.use(userRoutes)
+app.use(adminRoutes)
 app.use(messageRoutes)
 app.use(commentRoutes)
 app.use(songRoutes)
