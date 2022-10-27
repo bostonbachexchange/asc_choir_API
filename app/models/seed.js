@@ -86,9 +86,26 @@ const startSongs = [
     { title: 'Everything Possible', composer: 'Fred Small arr. Willi Zwozdesky', lyricist: '', type: 'hymn', hymnNumber: 1019, source: "Singing the Journey",
     lyrics: "We have cleared off the table, the leftovers saved, washed the dishes and put them away. |I have told you a story and tucked you in tight at the end of your knockabout day. |As the moon sets its sail to carry you to sleep over the Midnight Sea, |Well, I will sign you a song no one sang to me—may it keep you good company. |`` |You can be anybody that you want to be, you can love whomever you will. |You can travel any country where your heart leads and know I will love you still. |You can live by yourself, you can gather friends around, you can choose one |special one. |And the only measure of your words and your deeds |Will be the love you leave behind when you’re gone. |`` |Some girls grow up strong and bold; some boys are quiet and kind. |Some race on ahead, some follow behind; some go in their own way and time. |Some women love women and some men love men. |Some raise children and some never do. |You can dream all the day, never reaching the end of everything possible for you. |`` |Don’t be rattled by names, by taunts or games, but seek out spirits true. |If you give your friends the best part of yourself, they will give the same back to you. |`` |You can be anybody that you want to be, you can love whomever you will. |You can travel any country where your heart leads and know I will love you still. |You can live by yourself, you can gather friends around, you can choose one special one. |And the only measure of your words and your deeds |Will be the love you leave behind when you’re gone. |Oh, the love you leave behind when you’re gone.",
     scorePDF: 'STJ1019', recordings: [], embedId: ['4R5OVCXh3kM', '3cC6f64d_Nc', '-sl2n0J3_LA', 'BSTM-GxJuLI', 'YhKMXmjTa3o'], owner: '632a0d10220197d54dc98cf1'},
+
+    { title: 'How Beautiful the March of Days', composer: 'English melody, arr. by Ralph Vaughan Williams', lyricist: 'Frances Whitmarsh Wile', type: 'hymn', hymnNumber: 57, source: "Singing the Living Tradition",
+    lyrics: 'All beautiful the march of days, as seasons come and go; |the hand that shaped the rose hath wrought the crystal of the snow; |hath sent the hoary frost of heaven, the flowing waters sealed, |and laid a silent loveliness on hill and wood and field. | `|` |O’er white expanses sparkling clear the radiant morns unfold; |the solemn splendors of the night burn brighter through the cold; |life mounts in every throbbing vein, love deepens round the hearth, |and clearer sounds the angel-hymn, “Good will to all on earth.” | `|` |O Thou from whose unfathomed law the year in beauty flows, |thy self the vision passing by in crystal and in rose. |Day unto day doth utter speech, and night to night proclaim, |in ever changing words of light, the wonder of thy name.',
+    scorePDF: 'STLT57', recordings: '', embedId: ['sPUmDTNpGPc', 'TqVmAkjvgQM', 'HCwnmGFUZbM'], owner: '632a0d10220197d54dc98cf1'},
+
+    { title: 'The Earth, Fire, Water, Air', composer: 'Anonymous', lyricist: 'Anonymous', type: 'hymn', hymnNumber: 387, source: "Singing the Living Tradition",
+    lyrics: 'The earth, the water, the fire, the air, |return, return, return, return.',
+    scorePDF: 'STLT387', recordings: '', embedId: ['WFB3tDNx85g'], owner: '632a0d10220197d54dc98cf1'},
+
+    { title: 'We Are', composer: '', lyricist: '', type: 'hymn', hymnNumber: 1051, source: "Singing the Journey",
+    lyrics: 'For each child that’s born, |a morning star rises and |sings to the universe |who we are. | ` | `|For each child that’s born, |a morning star rises and |sings to the universe |who we are. | ` | `|We are our grandmothers’ prayers |and we are our grandfathers’ dreamings, |we are the breath of our ancestors, |we are the spirit of God. | ` |` |We are mothers of courage and fathers of time, |we are daughters of dust and the sons of great visions, |we’re sisters of mercy and brothers of love, |we are lovers of life and the builders of nations, |we’re seekers of truth and keepers of faith, |we are makers of peace and the wisdom of ages. | ` | `|We are our grandmothers’ prayers |and we are our grandfathers’ dreamings, |we are the breath of our ancestors, |we are the spirit of God. | ` | `|For each child that’s born, |a morning star rises and |sings to the universe |who we are.',
+    scorePDF: 'STJ1051', recordings: '', embedId: ['xFq67p-047g','ylbrZOQObFo', 'fg9St_ftIjQ', 'dztxEgzYONw'], owner: '632a0d10220197d54dc98cf1'},
+
+    { title: 'Do When the Spirit Says Do', composer: 'African-American spiritual arr. Mark Freundt', lyricist: 'African-American spiritual, civil rights period', type: 'hymn', hymnNumber: 1024, source: "Singing the Journey",
+    lyrics: 'You got to do when the spirit says do! |You got to do when the spirit says do! |When the spirit says do, you got to do, oh Lord! |You got to do when the spirit says do! |Spirit says do (6x) |`|` |Other verses may include sing, dance, laugh, shout, etc.',
+    scorePDF: 'STJ1024', recordings: '', embedId: ['R2T497pklOk','lDfGM92V3XA', '6mDTUJPA6Cw'], owner: '632a0d10220197d54dc98cf1'},
+
     // { title: '', composer: '', lyricist: '', type: '', hymnNumber: 0, source: "Singing the Living Tradition",
     // lyrics: '',
-    // scorePDF: '', recordings: '', embedId: '', owner: '632a0d10220197d54dc98cf1'},
+    // scorePDF: '', recordings: '', embedId: [''], owner: '632a0d10220197d54dc98cf1'},
 ]
 
 mongoose.connect(db, {
