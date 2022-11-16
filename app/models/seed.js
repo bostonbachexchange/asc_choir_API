@@ -95,13 +95,29 @@ const startSongs = [
     lyrics: 'The earth, the water, the fire, the air, |return, return, return, return.',
     scorePDF: 'STLT387', recordings: '', embedId: ['WFB3tDNx85g'], owner: '632a0d10220197d54dc98cf1'},
 
-    { title: 'We Are', composer: '', lyricist: '', type: 'hymn', hymnNumber: 1051, source: "Singing the Journey",
+    { title: 'We Are', composer: 'Ysaye M. Barnwell', lyricist: 'Ysaye M. Barnwell', type: 'hymn', hymnNumber: 1051, source: "Singing the Journey",
     lyrics: 'For each child that’s born, |a morning star rises and |sings to the universe |who we are. | ` | `|For each child that’s born, |a morning star rises and |sings to the universe |who we are. | ` | `|We are our grandmothers’ prayers |and we are our grandfathers’ dreamings, |we are the breath of our ancestors, |we are the spirit of God. | ` |` |We are mothers of courage and fathers of time, |we are daughters of dust and the sons of great visions, |we’re sisters of mercy and brothers of love, |we are lovers of life and the builders of nations, |we’re seekers of truth and keepers of faith, |we are makers of peace and the wisdom of ages. | ` | `|We are our grandmothers’ prayers |and we are our grandfathers’ dreamings, |we are the breath of our ancestors, |we are the spirit of God. | ` | `|For each child that’s born, |a morning star rises and |sings to the universe |who we are.',
     scorePDF: 'STJ1051', recordings: '', embedId: ['xFq67p-047g','ylbrZOQObFo', 'fg9St_ftIjQ', 'dztxEgzYONw'], owner: '632a0d10220197d54dc98cf1'},
 
     { title: 'Do When the Spirit Says Do', composer: 'African-American spiritual arr. Mark Freundt', lyricist: 'African-American spiritual, civil rights period', type: 'hymn', hymnNumber: 1024, source: "Singing the Journey",
     lyrics: 'You got to do when the spirit says do! |You got to do when the spirit says do! |When the spirit says do, you got to do, oh Lord! |You got to do when the spirit says do! |Spirit says do (6x) |`|` |Other verses may include sing, dance, laugh, shout, etc.',
     scorePDF: 'STJ1024', recordings: '', embedId: ['R2T497pklOk','lDfGM92V3XA', '6mDTUJPA6Cw'], owner: '632a0d10220197d54dc98cf1'},
+
+    { title: 'Open My Heart', composer: 'Henry S. Flurry', lyricist: 'Henry S. Flurry', type: 'hymn', hymnNumber: 1013, source: "Singing the Journey",
+    lyrics: 'Open my heart to all that I seek; |Let me be part of the Love You give.',
+    scorePDF: 'STJ1013', recordings: '', embedId: ['j5F8bMPHVKo', 'W0xKDJ0bNGE', 'JlsCgNMOsTE'], owner: '632a0d10220197d54dc98cf1'},
+
+    { title: 'Meditation on Breathing', composer: 'Sarah Dan Jones', lyricist: 'Sarah Dan Jones', type: 'hymn', hymnNumber: 1009, source: "Singing the Journey",
+    lyrics: 'When I breathe in, |I’ll breathe in peace. |When I breathe out, |I’ll breathe out love. |` |Breathe in, Breathe out, |Breathe in, Breathe out',
+    scorePDF: 'STJ1009', recordings: '', embedId: ['YHHxeDludT4', 'VuAd-yImOt4', 'IRl8Y4RIQqo'], owner: '632a0d10220197d54dc98cf1'}, 
+
+    { title: 'We Are Not Our Own', composer: 'David Hurd', lyricist: 'Brian Wren', type: 'hymn', hymnNumber: 317, source: "Singing the Living Tradition",
+    lyrics: 'We are not our own. Earth forms us, |human leaves on nature\’s growing vine, |fruit of many generations, |seeds of life divine. |`` |We are not alone. Earth names us: |past and present, peoples near and far, |family and friends and strangers |show us who we are. |`` |Therefore let us make thanksgiving, |and with justice, willing and aware, |give to earth, and all things living, |liturgies of care. |`` |Let us be a house of welcome, |living stone upholding living stone, |gladly showing all our neighbors |we are not our own!',
+    scorePDF: 'STLT317', recordings: '', embedId: ['6amZCAYF4Kw', 'Hm1ZOJsRhVQ'], owner: '632a0d10220197d54dc98cf1'},
+
+    { title: '', composer: '', lyricist: '', type: '', hymnNumber: 0, source: "Singing the Living Tradition",
+    lyrics: '',
+    scorePDF: '', recordings: '', embedId: [''], owner: '632a0d10220197d54dc98cf1'},
 
     // { title: '', composer: '', lyricist: '', type: '', hymnNumber: 0, source: "Singing the Living Tradition",
     // lyrics: '',
