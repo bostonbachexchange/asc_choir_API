@@ -20,7 +20,32 @@ const router = express.Router()
 // INDEX
 // GET ALL SONGS 
 router.get('/songs', (req, res, next) => {
-	Song.find().sort({hymnNumber: 1})
+	Song.find({type: 'Choral'}).sort({hymnNumber: 1})
+		.then((songs) => {
+			// `songs` will be an array of Mongoose documents
+			// we want to convert each one to a POJO, so we use `.map` to
+			// apply `.toObject` to each one
+			return songs.map((song) => song.toObject())
+		})
+		// respond with status 200 and JSON of the examples
+		.then((songs) => res.status(200).json({ songs: songs }))
+		// if an error occurs, pass it to the handler
+		.catch(next)
+})
+
+router.get('/singingthejourney', (req, res, next) => {
+	Song.find({source: 'Singing the Journey'}).sort({hymnNumber: 1})
+		.then((songs) => {
+			return songs.map((song) => song.toObject())
+		})
+		// respond with status 200 and JSON of the examples
+		.then((songs) => res.status(200).json({ songs: songs }))
+		// if an error occurs, pass it to the handler
+		.catch(next)
+})
+
+router.get('/singingthelivingtradition', (req, res, next) => {
+	Song.find({source: 'Singing the Living Tradition'}).sort({hymnNumber: 1})
 		.then((songs) => {
 			// `songs` will be an array of Mongoose documents
 			// we want to convert each one to a POJO, so we use `.map` to
