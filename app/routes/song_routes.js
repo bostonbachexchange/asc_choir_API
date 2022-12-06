@@ -33,6 +33,16 @@ router.get('/songs', (req, res, next) => {
 		.catch(next)
 })
 
+router.get('/choralresponses', (req, res, next) => {
+	Song.find({source: 'Choral Responses'}).sort({hymnNumber: 1})
+		.then((songs) => {
+			return songs.map((song) => song.toObject())
+		})
+		// respond with status 200 and JSON of the examples
+		.then((songs) => res.status(200).json({ songs: songs }))
+		// if an error occurs, pass it to the handler
+		.catch(next)
+})
 router.get('/singingthejourney', (req, res, next) => {
 	Song.find({source: 'Singing the Journey'}).sort({hymnNumber: 1})
 		.then((songs) => {
@@ -151,6 +161,7 @@ router.delete('/songs/:id', requireToken, (req, res, next) => {
 		.then(handle404)
 		.then((song) => {
 			// throw an error if current user doesn't own `example`
+			console.log('req', req)
 			requireOwnership(req, song)
 			// delete the example ONLY IF the above didn't throw
 			song.deleteOne()
