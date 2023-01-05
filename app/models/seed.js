@@ -36,6 +36,18 @@ const startSongs = [
     lyrics: '',
     scorePDF: '', recordings: 'https://www.youtube.com/watch?v=rBmU_uj7i18', embedId: ['rBmU_uj7i18'], owner: '63019b25ae6e795c6c8e9eb7'},
 
+    { title: 'Spirit of Life', composer: 'Carolyn McDade, harmony by Grace Lewis-McLaren', lyricist: 'Carolyn McDade', type: 'Hymn', hymnNumber: 123, source: "Singing the Living Tradition",
+    lyrics: 'Spirit of Life, come unto me. |Sing in my heart all the stirrings of compassion. |Blow in the wind, rise in the sea; |move in the hand, giving life the shape of justice. |Roots hold me close; wings set me free; |Spirit of Life, come to me, come to me.',
+    scorePDF: 'STLT123', recordings: '', embededId: ['LikvoIiN_bU', 'SWMcVdQ1WKQ'], owner: '63019b25ae6e795c6c8e9eb7'},
+
+    { title: 'I Know This Rose Will Open', composer: 'Mary E. Grigolia', lyricist: 'Mary E. Grigolia', type: 'Hymn', hymnNumber: 396, source: "Singing the Living Tradition",
+    lyrics: 'I know this rose will open. |I know my fear will burn away. |I know my soul will unfurl its wings. |I know this rose will open.',
+    scorePDF: 'STLT396', recordings: '', embededId: ['xB62-Hjh1VI', '2fFK_Qf30PQ', 'PKYoF-4swxo', 'faOjkYFTtG4', 'uxXxcM72ctY'], owner: '63019b25ae6e795c6c8e9eb7'},
+
+    { title: 'Come, Come, Whoever You Are', composer: 'Lynn Adair Ungar', lyricist: 'Adapt. from Rumi', type: 'Hymn', hymnNumber: 188, source: "Singing the Living Tradition",
+    lyrics: 'Come, come, whoever you are, |wanderer, worshiper, lover of leaving. |Ours is no caravan of despair. |Come, yet again come.',
+    scorePDF: 'STLT188', recordings: '', embedId: ['tVafTtcBAJY'], owner: '63019b25ae6e795c6c8e9eb7'},
+
     { title: 'No Longer Forward or Behind', composer: 'English Folk Song', lyricist: 'JOHN GREENLEAF WHITTIER', type: 'Hymn', hymnNumber: 9, source: "Singing the Living Tradition",
     lyrics: '',
     scorePDF: '', recordings: '', owner: '63019b25ae6e795c6c8e9eb7'},
@@ -93,6 +105,12 @@ const startSongs = [
 
     { title: 'Make Me a Channel of Your Peace', composer: 'Sebastian Temple', lyricist: 'Sebastian Temple', type: 'Choral', source: "",
     lyrics: 'Make me a channel of your peace. |Where there is hatred let me bring your love. |Where there is injury, your pardon, Lord |And where there\'s doubt, true faith in you. |` |Oh, Master grant that I may never seek |So much to be consoled as to console |To be understood as to understand |To be loved as to love with all my soul. |` |Make me a channel of your peace |Where there\'s despair in life, let me bring hope |Where there is darkness, only light |And where there\'s sadness, ever joy. |` |Oh, Master grant that I may never seek |So much to be consoled as to console |To be understood as to understand |To be loved as to love with all my soul. |` |Make me a channel of your peace |It is in pardoning that we are pardoned |In giving to all men that we receive |And in dying that we\'re born to eternal life. ', scorePDF: 'makeMeAChannel', recordings: '', embedId: ['7mxO_dsvHew','rD33W6vVpNI',], owner: '63019b25ae6e795c6c8e9eb7'},
+
+    { title: 'Flame Welcome All', composer: 'Marilyn Marvill', lyricist: 'Marilyn Marvill', type: 'Choral', source: "",
+    lyrics: 'Flame welcome all. |Calm every storm. |Bring us together in peace.|` |Warm every heart, |silence hatred and fear. |` |Fill us with love. |Burn in Peace. ', scorePDF: 'flameWelcomeAll', recordings: '', embedId: ['HhjUQjQvOkc'], owner: '63019b25ae6e795c6c8e9eb7'},
+
+    { title: 'Like a Mighty Stream', composer: 'Moses Hogan and John Jacobson', lyricist: 'Moses Hogan and John Jacobson', type: 'Choral', source: "",
+    lyrics: 'Lift ev’ry voice and let us sing!|[Baritones: In ev’ry song let freedom ring!]|From ev’ry soul comes a noble dream |Let justice roll like a mighty stream. |`|Like a mighty stream, [like a mighty stream,] |Like a mighty stream. |Let justice roll, |Let justice roll, |Let justice roll |Like a mighty stream. |[Baritones: Oh, ev’ry trial we’ll overcome,] |When ev’ry child beneath the sun,|[An ev’ry soul shall live as one.] |The noble dream has just begun! |`|Like a mighty stream, [like a mighty stream,] |Like a mighty stream. |Let justice roll, |Let justice roll, |Let justice roll |Like a mighty stream. |`|Like a mighty stream, [like a mighty stream,] |Like a mighty stream. |Let justice roll, |Let justice roll, |Let justice roll |Like a mighty stream.', scorePDF: 'likeAMightStream', recordings: '', embedId: ['tMmkJMMrTTE', 'uKd-noUKlEc', 'n-f-IVNpky8'], owner: '63019b25ae6e795c6c8e9eb7'},
 
     { title: 'Sing With Joy, Sing Noel! (Personent Hodie)', composer: 'Traditional 14th-century German arr. Brad Printz', lyricist: 'traditional, English Alt by Brad Printz', type: 'Choral', source: "",
     lyrics: 'Personent hodie voces puerulae, |Laudantes jucunde Qui nobis est natus, |Summo Deo datus.  |` |Ideo, Ideo, Ideo, Ideo |Ideo gloria in excelsis Deo! |` |Sing with joy, sing noel, on this day all is well. |To despair, say farewell, Sing with merry voices. |All the world rejoices. |` |Ideo, Ideo, Ideo, Ideo |Ideo gloria in excelsis Deo! |` |Breezes mild, gently blow, Silently falls the snow |down to earth. Now bestow joyful exaltation. |peaceful jubilation. |` |Ideo, Ideo, Ideo, Ideo |Ideo gloria in excelsis Deo! |` |Sing with joy, sing noel, on this day all is well. |To despair, say farewell, Sing with merry voices. |All the world rejoices. |` |Ideo, Ideo, Ideo, Ideo |Ideo gloria in excelsis Deo! |` |Sing with joy! Sing noel!  |Sing with jubilation! |Sing we noel!', scorePDF: 'SingWithJoy', recordings: {soprano: 'SWJ_soprano', alto: 'SWJ_alto', tenor: 'SWJ_tenor', bass: 'SWJ_bass', satb: 'SWJ_allparts', piano: 'SWJ_piano'}, embedId: ['axHuOf7jzEI','YWRBIL_Izj8', '26mimCKpYyE', '_H2zKLBfQNY'], owner: '63019b25ae6e795c6c8e9eb7'},
