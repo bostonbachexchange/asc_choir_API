@@ -38,11 +38,11 @@ const startSongs = [
 
     { title: 'Spirit of Life', composer: 'Carolyn McDade, harmony by Grace Lewis-McLaren', lyricist: 'Carolyn McDade', type: 'Hymn', hymnNumber: 123, source: "Singing the Living Tradition",
     lyrics: 'Spirit of Life, come unto me. |Sing in my heart all the stirrings of compassion. |Blow in the wind, rise in the sea; |move in the hand, giving life the shape of justice. |Roots hold me close; wings set me free; |Spirit of Life, come to me, come to me.',
-    scorePDF: 'STLT123', recordings: '', embededId: ['LikvoIiN_bU', 'SWMcVdQ1WKQ'], owner: '63019b25ae6e795c6c8e9eb7'},
+    scorePDF: 'STLT123', recordings: '', embedId: ['LikvoIiN_bU', 'SWMcVdQ1WKQ'], owner: '63019b25ae6e795c6c8e9eb7'},
 
     { title: 'I Know This Rose Will Open', composer: 'Mary E. Grigolia', lyricist: 'Mary E. Grigolia', type: 'Hymn', hymnNumber: 396, source: "Singing the Living Tradition",
     lyrics: 'I know this rose will open. |I know my fear will burn away. |I know my soul will unfurl its wings. |I know this rose will open.',
-    scorePDF: 'STLT396', recordings: '', embededId: ['xB62-Hjh1VI', '2fFK_Qf30PQ', 'PKYoF-4swxo', 'faOjkYFTtG4', 'uxXxcM72ctY'], owner: '63019b25ae6e795c6c8e9eb7'},
+    scorePDF: 'STLT396', recordings: '', embedId: ['xB62-Hjh1VI', '2fFK_Qf30PQ', 'PKYoF-4swxo', 'faOjkYFTtG4', 'uxXxcM72ctY'], owner: '63019b25ae6e795c6c8e9eb7'},
 
     { title: 'Come, Come, Whoever You Are', composer: 'Lynn Adair Ungar', lyricist: 'Adapt. from Rumi', type: 'Hymn', hymnNumber: 188, source: "Singing the Living Tradition",
     lyrics: 'Come, come, whoever you are, |wanderer, worshiper, lover of leaving. |Ours is no caravan of despair. |Come, yet again come.',
@@ -51,13 +51,14 @@ const startSongs = [
     { title: 'No Longer Forward or Behind', composer: 'English Folk Song', lyricist: 'JOHN GREENLEAF WHITTIER', type: 'Hymn', hymnNumber: 9, source: "Singing the Living Tradition",
     lyrics: '',
     scorePDF: '', recordings: '', owner: '63019b25ae6e795c6c8e9eb7'},
-    { title: 'Come, Come, Whoever You Are', composer: 'Lynn Adair Ungar', lyricist: 'Adapt. from Rumi', type: 'Hymn', hymnNumber: 188, source: "Singing the Living Tradition",
-    lyrics: 'Come, come, whoever you are, |wanderer, worshiper, lover of leaving. |Ours is no caravan of despair. |Come, yet again come.',
-    scorePDF: 'STLT188', recordings: '', embedId: ['tVafTtcBAJY'], owner: '63019b25ae6e795c6c8e9eb7'},
 
     { title: 'Hashiveinu', composer: 'Traditional Hebrew', lyricist: 'Traditional Hebrew', type: 'hymn', hymnNumber: 216, source: "Singing the Living Tradition",
     lyrics: 'Hebrew Lyrics (phonetic): | ` |Hashivenu, hashivenu Adonai elecha |Venashuva venashuva |Hadesh Hadesh yamenuke ke dem |` |` |English Translation: |` |Turn us back, turn us back, O LORD to You |and we will turn, and we will turn |renew, renew our days as before | ` |Lamentations 5:21',
     scorePDF: 'STLT216', recordings: '', embedId: ['4pnP3q6WPr0', ], owner: '63019b25ae6e795c6c8e9eb7'},
+
+    { title: 'Come Sing a Song with Me', composer: 'Carolyn McDade', lyricist: 'Carolyn McDade', type: 'Hymn', hymnNumber: 346, source: "Singing the Living Tradition",
+    lyrics: 'Come, sing a song with me, |come, sing a song with me, |come, sing a song with me, |that I might know your mind. |`` |(Chorus) |And I’ll bring you hope |when hope is hard to find, |and I’ll bring a song of love |and a rose in the wintertime. |`` |Come, dream a dream with me, |come, dream a dream with me, |come, dream a dream with me, |that I might know your mind. |`` |(Chorus) |`` |Come, walk in rain with me, |come, walk in rain with me, |come, walk in rain with me, |that I might know your mind. |`` |(Chorus) |`` |Come, share a rose with me, |come, share a rose with me, |come, share a rose with me, |that I might know your mind. |` |(Chorus)',
+    scorePDF: 'STLT346', recordings: '', embedId: ['r7lKbzAmAuI', '4Ln5MWebquU', 'mlXzilOzFuw'], owner: '63019b25ae6e795c6c8e9eb7'},
 
     { title: 'We Would Be One', composer: 'Jean Sibelius', lyricist: 'Samuel Anthony Wright', type: 'Hymn', hymnNumber: 318, source: "Singing the Living Tradition",
     lyrics: 'We would be one as now we join in singing |our hymn of love, to pledge ourselves anew |to that high cause of greater understanding |of who we are, and what in us is true. |`|We would be one in living for each other |to show to all a new community. |We would be one in building for tomorrow |a nobler world than we have known today. |`|We would be one in searching for that meaning |which binds our hearts and points us on our way. |As one, we pledge ourselves to greater service, |with love and justice, strive to make us free.',
@@ -82,6 +83,10 @@ const startSongs = [
     { title: 'We Begin Again in Love', composer: 'Les Kleen', lyricist: 'Robert Eller-Isaacs', type: '', hymnNumber: 1037, source: "Singing the Journey",
     lyrics: 'We forgive ourselves and each other. We begin again in love.',
     scorePDF: 'STJ1037', recordings: '', embedId: ['o8sAXt-eES8'], owner: '63019b25ae6e795c6c8e9eb7'},
+
+    { title: 'Go Lifted Up', composer: 'Mortimer B. Barron', lyricist: 'Mortimer B. Barron', type: 'Hymn', hymnNumber: 1057, source: "Singing the Journey",
+    lyrics: 'Go lifted up, |Love bless your way, |moonlight, starlight |guide your journey |into peace |and the brightness of day.',
+    scorePDF: 'STJ1057', recordings: '', embedId: ['Jd1LoZj_O8o', 'w5zt_rroydk', 'tRQ5loUhiZ0'], owner: '63019b25ae6e795c6c8e9eb7'},
 
     { title: 'Be Ours a Religion', composer: 'Thomas Benjamin', lyricist: 'Theodore Parker', type: 'Hymn', hymnNumber: 1058, source: "Singing the Journey",
     lyrics: 'Be ours a religion which like sunshine goes everywhere, |its temple all space, its shrine the good heart, |its creed all truth, its ritual works of love.',

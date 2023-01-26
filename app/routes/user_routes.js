@@ -150,6 +150,30 @@ router.patch('/change-password', requireToken, (req, res, next) => {
 		.catch(next)
 })
 
+// UPDATE User Info
+// PATCH /profile/userId
+router.patch('/profile/update', requireToken, removeBlanks, (req, res, next) => {
+	// if the client attempts to change the `owner` property by including a new owner, prevent that by deleting that key/value pair
+	// delete req.body.message.owner
+	// let user
+	// `req.user` will be determined by decoding the token payload
+	User.findById(req.user.id)
+		.then(handle404)
+		// save user outside the promise chain
+		// .then((record) => {
+		// 	user = record
+		// })
+		.then((user) => {
+
+
+			// pass the result of Mongoose's `.update` to the next `.then`
+			return user.updateOne(req.body.user)
+		})
+		// if that succeeded, return 204 and no JSON
+		.then(() => res.sendStatus(204))
+		// if an error occurs, pass it to the handler
+		.catch(next)
+})
 ////////////////////////
 // Add a song to users repertoire
 ////////////////////////
