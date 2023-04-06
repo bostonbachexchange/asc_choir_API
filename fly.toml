@@ -1,12 +1,14 @@
-# fly.toml file generated for allsoulschoirapi on 2022-12-02T19:31:19-05:00
+# fly.toml file generated for asc-api on 2023-04-05T23:29:30-04:00
 
-app = "allsoulschoirapi"
+app = "asc-api"
 kill_signal = "SIGINT"
 kill_timeout = 5
 processes = []
 
 [env]
   PORT = "8080"
+  MONGODB_URI = "mongodb+srv://jclapper:sWGotxnzKf2TSlCB@projectcrud.hvhcg.mongodb.net/asc_choir?retryWrites=true&w=majority"
+  CLIENT_ORIGIN = "https://statuesque-cassata-b77ded.netlify.app"
 
 [experimental]
   allowed_public_ports = []
