@@ -1,4 +1,5 @@
 const mongoose = require('mongoose')
+const recordingSchema = require('./recording')
 const { Schema, model } = mongoose
 
 const songSchema = new Schema(
@@ -35,7 +36,8 @@ const songSchema = new Schema(
 			bass: {type: String},
 			satb: {type: String},
 			piano: {type: String},
-	},
+		},
+		audioRecording: [recordingSchema],
 		embedId: [
 			{ type: String }
 		],

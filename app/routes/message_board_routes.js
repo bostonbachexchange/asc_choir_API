@@ -1,6 +1,4 @@
-// Express docs: http://expressjs.com/en/api.html
 const express = require('express')
-// Passport docs: http://www.passportjs.org/docs/
 const passport = require('passport')
 
 // pull in Mongoose model for messageboard
@@ -12,6 +10,16 @@ const requireOwnership = customErrors.requireOwnership
 const removeBlanks = require('../../lib/remove_blank_fields')
 const requireToken = passport.authenticate('bearer', { session: false })
 const router = express.Router()
+const multer  = require('multer')
+const storage = multer.diskStorage({
+	destination: (req, file, cb) => {
+	  cb(null, './uploads');
+	},
+	filename: (req, file, cb) => {
+	  cb(null, file.originalname);
+	},
+  });
+  const upload = multer({ storage });
 
 // INDEX
 // GET ALL MESSAGES FROM MESSAGEBOARD
@@ -34,60 +42,39 @@ router.get('/messageboard/:id', (req, res, next) => {
 	MessageBoard.findById(req.params.id)
 		.populate(['owner', 'comments.owner'])
 		.then(handle404)
-
-		// .populate({
-		// 	path:     'comments',			
-		// 	populate: { path:  'owner',
-		// 			model: 'users' }
-		//   })
-		// if `findById` is succesful, respond with 200 and "example" JSON
-		// .then((message) => {
-		// 	if (message.comments) {
-		// 		console.log('message.comments', message.comments)
-		// 		// message.comments.find()
-		// 		// .populate('owner')
-		// 	}
-		// })
 		.then((message) => res.status(200).json({ message: message.toObject() }))
-		// if an error occurs, pass it to the handler
 		.catch(next)
 })
 
 // CREATE
 // POST /messageboard
-router.post('/messageboard', requireToken, (req, res, next) => {
-	// set owner of new example to be current user
-	console.log('hit route, req.body', req.body)
-	req.body.message.owner = req.user.id
-	req.body.message.name = req.user.name
-	console.log('req.body.message', req.body.message)
-	MessageBoard.create(req.body.message)
-		// respond to succesful `create` with status 201 and JSON of new "example"
+router.post('/messageboard', requireToken, upload.single('file'), (req, res, next) => {
+	const messageData = JSON.parse(req.body.message);
+	messageData.owner = req.user.id
+	messageData.image = req.file.path	
+
+	MessageBoard.create(messageData)
 		.then((message) => {
 			res.status(201).json({ message: message.toObject() })
 		})
-		// if an error occurs, pass it off to our error handler
-		// the error handler needs the error message and the `res` object so that it
-		// can send an error message back to the client
 		.catch(next)
 })
 
 // UPDATE
 // PATCH /messageboard/5a7db6c74d55bc51bdf39793
-router.patch('/messageboard/:id', requireToken, removeBlanks, (req, res, next) => {
+router.patch('/messageboard/:id', requireToken, removeBlanks, upload.single('file'),(req, res, next) => {
 	// if the client attempts to change the `owner` property by including a new owner, prevent that by deleting that key/value pair
 	delete req.body.message.owner
-
+	const messageData = JSON.parse(req.body.message);
+	messageData.image = req.file.path
 	MessageBoard.findById(req.params.id)
 		.then(handle404)
 		.then((message) => {
 			// pass the `req` object and the Mongoose record to `requireOwnership`
 			// it will throw an error if the current user isn't the owner
-			console.log('update messate route in api hit')
 			requireOwnership(req, message)
-
 			// pass the result of Mongoose's `.update` to the next `.then`
-			return message.updateOne(req.body.message)
+			return message.updateOne(messageData)
 		})
 		// if that succeeded, return 204 and no JSON
 		.then(() => res.sendStatus(204))

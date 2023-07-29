@@ -6,15 +6,17 @@ const mongoose = require('mongoose')
 const cors = require('cors')
 
 //////AWS
-const { uploadFile } = require('./s3')
+// const { uploadFile } = require('./s3')
 
 // require route files
 const userRoutes = require('./app/routes/user_routes')
 const adminRoutes = require('./app/routes/admin_routes')
+const sundayServiceRoutes = require('./app/routes/sunday_service_routes')
 const messageRoutes = require('./app/routes/message_board_routes')
 const songRoutes = require('./app/routes/song_routes')
 const uploadRoutes = require('./app/routes/upload_routes')
 const commentRoutes = require('./app/routes/comment_routes')
+const recordingRoutes = require('./app/routes/recording_routes')
 
 // require middleware
 const errorHandler = require('./lib/error_handler')
@@ -69,7 +71,7 @@ app.use(auth)
 app.use(express.json())
 // this parses requests sent by `$.ajax`, which use a different content type
 app.use(express.urlencoded({ extended: true }))
-
+app.use('/uploads', express.static('uploads'))
 // log each request as it comes in for debugging
 app.use(requestLogger)
 
@@ -80,6 +82,8 @@ app.use(messageRoutes)
 app.use(commentRoutes)
 app.use(songRoutes)
 app.use(uploadRoutes)
+app.use(sundayServiceRoutes)
+app.use(recordingRoutes)
 
 // register error handling middleware
 // note that this comes after the route middlewares, because it needs to be

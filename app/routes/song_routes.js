@@ -2,17 +2,23 @@
 const express = require('express')
 const passport = require('passport')
 const multer  = require('multer')
-const upload = multer({ dest: 'uploads/' })
-const mongoose = require('mongoose')
+const storage = multer.diskStorage({
+	destination: (req, file, cb) => {
+	  cb(null, './uploads');
+	},
+	filename: (req, file, cb) => {
+	  cb(null, file.originalname);
+	},
+  });
+  const upload = multer({ storage });
 // pull in Mongoose model for songs
-const User = require('../models/user')
 const Song = require('../models/song')
 const customErrors = require('../../lib/custom_errors')
 const handle404 = customErrors.handle404
 const requireOwnership = customErrors.requireOwnership
 const removeBlanks = require('../../lib/remove_blank_fields')
 const app = require('../../server')
-const { uploadFile } = require('../../s3')
+// const { uploadFile } = require('../../s3')
 const requireToken = passport.authenticate('bearer', { session: false })
 const router = express.Router()
 
@@ -20,6 +26,19 @@ const router = express.Router()
 // INDEX
 // GET ALL SONGS 
 router.get('/songs', (req, res, next) => {
+	Song.find({}).sort({hymnNumber: 1})
+		.then((songs) => {
+			// `songs` will be an array of Mongoose documents
+			// we want to convert each one to a POJO, so we use `.map` to
+			// apply `.toObject` to each one
+			return songs.map((song) => song.toObject())
+		})
+		// respond with status 200 and JSON of the examples
+		.then((songs) => res.status(200).json({ songs: songs }))
+		// if an error occurs, pass it to the handler
+		.catch(next)
+})
+router.get('/choralsongs', (req, res, next) => {
 	Song.find({type: 'Choral'}).sort({hymnNumber: 1})
 		.then((songs) => {
 			// `songs` will be an array of Mongoose documents
@@ -91,66 +110,32 @@ router.get('/songs/:id', (req, res, next) => {
 // 	res.send('👌')
 // })
 
-// CREATE
-// POST /create-song
-// frankenstein code
-// router.post('/create-song', requireToken, upload.single('image'), (req, res, next) => {
-// 	// set owner of new song to be current user
-// 	req.body.song.owner = req.user.id
-// // 	const file = req.file
-// // 	console.log(file)
-// // 	const result = await uploadFile(file)
-// // 	console.log(result)
-// // 	// const description = req.body.description
-// // 	res.send('👌')
-// // })
-// 	Song.create(req.body.song)
-// 		// respond to succesful `create` with status 201 and JSON of new "song"
-// 		.then((song) => {
-// 			res.status(201).json({ song: song.toObject() })
-// 		})
-// 		// if an error occurs, pass it off to our error handler
-// 		// the error handler needs the error message and the `res` object so that it
-// 		// can send an error message back to the client
-// 		.catch(next)
-// })
 
-//not broken
-router.post('/create-song', requireToken,(req, res, next) => {
-	// set owner of new song to be current user
-	req.body.song.owner = req.user.id
 
-	Song.create(req.body.song)
-		// respond to succesful `create` with status 201 and JSON of new "song"
+router.post('/create-song', requireToken, removeBlanks , upload.single('file'), (req, res, next) => {
+
+	const songData = JSON.parse(req.body.song);
+	songData.owner = req.user.id
+	songData.scorePDF = req.file.path
+	songData.hymnNumber = parseInt(songData.hymnNumber)
+	Song.create(songData)
 		.then((song) => {
 			res.status(201).json({ song: song.toObject() })
 		})
-		// if an error occurs, pass it off to our error handler
-		// the error handler needs the error message and the `res` object so that it
-		// can send an error message back to the client
 		.catch(next)
 })
 
 // UPDATE
 // PATCH /songs/5a7db6c74d55bc51bdf39793
-router.patch('/songs/:id', requireToken, removeBlanks, (req, res, next) => {
-	// if the client attempts to change the `owner` property by including a new
-	// owner, prevent that by deleting that key/value pair
+router.patch('/songs/:id', requireToken, removeBlanks, upload.single('file'), (req, res, next) => {
 	delete req.body.song.owner
-
 	Song.findById(req.params.id)
 		.then(handle404)
 		.then((song) => {
-			// pass the `req` object and the Mongoose record to `requireOwnership`
-			// it will throw an error if the current user isn't the owner
 			requireOwnership(req, song)
-
-			// pass the result of Mongoose's `.update` to the next `.then`
 			return song.updateOne(req.body.song)
 		})
-		// if that succeeded, return 204 and no JSON
 		.then(() => res.sendStatus(204))
-		// if an error occurs, pass it to the handler
 		.catch(next)
 })
 

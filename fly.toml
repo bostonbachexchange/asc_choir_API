@@ -8,7 +8,7 @@ processes = []
 [env]
   PORT = "8080"
   MONGODB_URI = "mongodb+srv://jclapper:sWGotxnzKf2TSlCB@projectcrud.hvhcg.mongodb.net/asc_choir?retryWrites=true&w=majority"
-  CLIENT_ORIGIN = "https://statuesque-cassata-b77ded.netlify.app"
+  CLIENT_ORIGIN = "https://uubraintreemusic.org"
 
 [experimental]
   allowed_public_ports = []

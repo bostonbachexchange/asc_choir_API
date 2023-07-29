@@ -7,13 +7,47 @@ const userSchema = new mongoose.Schema(
 			required: true,
 			unique: true,
 		},
+		phoneNumber: {
+		  type: String, 
+		},
+		firstName: {
+			type: String,
+			default: 'First', 
+		},
+		lastName: {
+			type: String,
+			default: 'Last', 
+		},
 		name: {
 			type: String,
+			default: 'Last', 
 		},
+		profilePicture: {
+			type: String,
+			default: 'default', 
+		  },
+		pronouns: {
+			type: String,
+		  },
+		  preferredContact: {
+			type: String,
+			enum: ['email', 'phone', 'other'], 
+			default: 'email', 
+		  },
 		vocalRange: {
 			type: String,
-			enum: ['soprano', 'alot', 'tenor', 'base'],
+			enum: ['soprano', 'tenor', 'baritone', 'bass'],
 			default: 'soprano'
+		},
+		settings: {
+			receiveBlogNotifications: {
+			  type: Boolean,
+			  default: true, 
+			},
+			receiveServiceNotifications: {
+			  type: Boolean,
+			  default: true, 
+			},
 		},
 		myList: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Song' }],
 		hashedPassword: {

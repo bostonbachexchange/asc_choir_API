@@ -1,6 +1,5 @@
 const mongoose = require('mongoose')
 const commentSchema = require('./comment')
-// const user = require('./user')
 const { Schema, model } = mongoose
 
 const messageBoardSchema = new Schema(
@@ -9,6 +8,9 @@ const messageBoardSchema = new Schema(
 			type: String,
 		},
 		title: {
+			type: String,
+		},
+		image: {
 			type: String,
 		},
 		content: {

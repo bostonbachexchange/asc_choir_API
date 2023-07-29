@@ -25,7 +25,16 @@ const Song = require('../models/song')
 // it will also set `res.user`
 const requireToken = passport.authenticate('bearer', { session: false })
 const removeBlanks = require('../../lib/remove_blank_fields')
-
+const multer  = require('multer')
+const storage = multer.diskStorage({
+	destination: (req, file, cb) => {
+	  cb(null, './uploads');
+	},
+	filename: (req, file, cb) => {
+	  cb(null, file.originalname);
+	},
+  });
+  const upload = multer({ storage });
 // instantiate a router (mini app that only handles routes)
 const router = express.Router()
 // 		function getUserWithMyList(user){
@@ -152,27 +161,35 @@ router.patch('/change-password', requireToken, (req, res, next) => {
 
 // UPDATE User Info
 // PATCH /profile/userId
-router.patch('/profile/update', requireToken, removeBlanks, (req, res, next) => {
+router.patch('/profile-update', requireToken, removeBlanks, upload.single('file'),(req, res, next) => {
 	// if the client attempts to change the `owner` property by including a new owner, prevent that by deleting that key/value pair
 	// delete req.body.message.owner
 	// let user
 	// `req.user` will be determined by decoding the token payload
+	const userData = JSON.parse(req.body.user);
+	if (req.file) {
+		userData.profilePicture = req.file.path
+	}
 	User.findById(req.user.id)
-		.then(handle404)
-		// save user outside the promise chain
-		// .then((record) => {
-		// 	user = record
-		// })
-		.then((user) => {
-
-
-			// pass the result of Mongoose's `.update` to the next `.then`
-			return user.updateOne(req.body.user)
-		})
-		// if that succeeded, return 204 and no JSON
-		.then(() => res.sendStatus(204))
-		// if an error occurs, pass it to the handler
-		.catch(next)
+    .then(handle404)
+    .then((user) => {
+      // pass the result of Mongoose's `.update` to the next `.then`
+      return user.updateOne(userData).then(() => user);
+    })
+    .then((updatedUser) => {
+      res.status(200).json({ user: updatedUser.toObject() });
+    })
+    .catch(next);
+	// User.findById(req.user.id)
+	// 	.then(handle404)
+	// 	.then((user) => {
+	// 		// pass the result of Mongoose's `.update` to the next `.then`
+	// 		return user.updateOne(userData)
+	// 	})
+	// 	// if that succeeded, return 204 and no JSON
+	// 	.then(() => res.sendStatus(204))
+	// 	// if an error occurs, pass it to the handler
+	// 	.catch(next)
 })
 ////////////////////////
 // Add a song to users repertoire
