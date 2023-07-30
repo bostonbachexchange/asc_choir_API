@@ -22,8 +22,6 @@ const storage = multer.diskStorage({
 // CREATE
 // POST /comments/<message_id>
 router.post('/create-recordings/:songId', requireToken, upload.single('file'),(req, res, next) => {
-    console.log("req.body.recording", req.body.recording)
-    console.log("req.file in api!!??", req.file)
     const recordingData = JSON.parse(req.body.recording);
 	recordingData.owner = req.user.id
 	recordingData.audio = req.file.path

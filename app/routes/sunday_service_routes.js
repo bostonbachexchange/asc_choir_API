@@ -71,7 +71,8 @@ router.patch('/sundayservice/:id', requireToken, removeBlanks, upload.single('fi
 	delete req.body.service.owner
 	
 	const serviceData = JSON.parse(req.body.service);
-	serviceData.image = req.file.path
+	if (req.file) {serviceData.image = req.file.path}
+	
 	
 	SundayService.findById(req.params.id)
 		.then(handle404)
