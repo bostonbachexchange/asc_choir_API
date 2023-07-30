@@ -51,7 +51,8 @@ router.get('/messageboard/:id', (req, res, next) => {
 router.post('/messageboard', requireToken, upload.single('file'), (req, res, next) => {
 	const messageData = JSON.parse(req.body.message);
 	messageData.owner = req.user.id
-	messageData.image = req.file.path	
+	if (req.file) {messageData.image = req.file.path}
+		
 
 	MessageBoard.create(messageData)
 		.then((message) => {
