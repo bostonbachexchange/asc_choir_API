@@ -67,7 +67,7 @@ router.patch('/messageboard/:id', requireToken, removeBlanks, upload.single('fil
 	// if the client attempts to change the `owner` property by including a new owner, prevent that by deleting that key/value pair
 	delete req.body.message.owner
 	const messageData = JSON.parse(req.body.message);
-	messageData.image = req.file.path
+	if(req.file) {messageData.image = req.file.path}
 	MessageBoard.findById(req.params.id)
 		.then(handle404)
 		.then((message) => {

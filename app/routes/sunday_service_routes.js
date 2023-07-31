@@ -73,7 +73,6 @@ router.patch('/sundayservice/:id', requireToken, removeBlanks, upload.single('fi
 	const serviceData = JSON.parse(req.body.service);
 	if (req.file) {serviceData.image = req.file.path}
 	
-	
 	SundayService.findById(req.params.id)
 		.then(handle404)
 		.then((service) => {
