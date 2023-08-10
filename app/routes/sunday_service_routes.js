@@ -26,7 +26,7 @@ const router = express.Router()
 // INDEX
 // GET ALL MESSAGES FROM MESSAGEBOARD
 router.get('/sundayservice', (req, res, next) => {
-	SundayService.find().sort({date: -1})
+	SundayService.find().sort({date: 1})
         .then((sundayservice) => {
             return sundayservice.map((service) => service.toObject())
         })

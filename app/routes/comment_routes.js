@@ -43,18 +43,18 @@ const router = express.Router()
 // POST /comments/<message_id>
 router.post('/create-comments/:messageId', requireToken, (req, res, next) => {
 	// set owner of new example to be current user
-	console.log('create comment route hit')
+	// console.log('create comment route hit')
 	req.body.comment.owner = req.user.id
 	// console.log('req.body.comment.name', req.body.comment.name) 
-	console.log('user', req.user)
+	// console.log('user', req.user)
 	const comment = req.body.comment
-	console.log('comment', comment)
+	// console.log('comment', comment)
 	const messageId = req.params.messageId
 	MessageBoard.findById(messageId)
 	.then(handle404)
 	.then(message => {
-			console.log('this is the message', message)
-			console.log('this is the comment', req.body)
+			// console.log('this is the message', message)
+			// console.log('this is the comment', req.body)
 			message.comments.push(comment)
 			return message.save()
 		})
@@ -76,13 +76,13 @@ router.post('/create-comments/:messageId', requireToken, (req, res, next) => {
 router.patch('/comments/:messageId/:commentId', requireToken, removeBlanks, (req, res, next) => {
 	const messageId = req.params.messageId
 	const commentId = req.params.commentId
-	console.log('update comment route hit in API')
-	console.log("messageId")
-	console.log(messageId)
-	console.log("commentId")
-	console.log(commentId)
-	console.log("req.body.comment")
-	console.log(req.body.comment)
+	// console.log('update comment route hit in API')
+	// console.log("messageId")
+	// console.log(messageId)
+	// console.log("commentId")
+	// console.log(commentId)
+	// console.log("req.body.comment")
+	// console.log(req.body.comment)
 		// MessageBoard.update({_id:messageId, "comments.id":commentId}, {$set:req.body.comment}, {upsert:true})
 		// MessageBoard.findOneAndUpdate({_id:messageId, "comments._id":commentId}, {$set:{
 		// 	content:req.body.comment}}, function(error, comment){
@@ -92,7 +92,7 @@ router.patch('/comments/:messageId/:commentId', requireToken, removeBlanks, (req
 	MessageBoard.findById(messageId)
 		.then(handle404)
 		.then(message => {
-			console.log('message.comments', message.comments)
+			// console.log('message.comments', message.comments)
 			const theComment = message.comments.id(commentId)
 			// const theComment = message.comments.{commentId}
 			// ?? I think this will allow the owner who created the post to edit the comments ?? We want the commenter to edit their comments
