@@ -11,7 +11,8 @@ const storage = multer.diskStorage({
 	  cb(null, file.originalname);
 	},
   });
-  const upload = multer({ storage });
+
+const upload = multer({ storage });
 // pull in Mongoose model for messageboard
 const User = require('../models/user')
 const SundayService = require('../models/sundayService')
@@ -51,8 +52,8 @@ router.post('/sundayservice', requireToken, removeBlanks, upload.single('file'),
 	const serviceData = JSON.parse(req.body.service);
 	// req.body.service.owner = req.user.id
 	serviceData.owner = req.user.id
-	serviceData.image = req.file.path
-	
+	if (req.file) {serviceData.image = req.file.path} else {serviceData.image = 'default'}
+
 	SundayService.create(serviceData)
 		// respond to succesful `create` with status 201 and JSON of new "example"
 		.then((service) => {
@@ -69,7 +70,6 @@ router.post('/sundayservice', requireToken, removeBlanks, upload.single('file'),
 router.patch('/sundayservice/:id', requireToken, removeBlanks, upload.single('file'), (req, res, next) => {
 	// if the client attempts to change the `owner` property by including a new owner, prevent that by deleting that key/value pair
 	delete req.body.service.owner
-	
 	const serviceData = JSON.parse(req.body.service);
 	if (req.file) {serviceData.image = req.file.path}
 	
